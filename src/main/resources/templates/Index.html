@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+
+<title>INDEX</title>
+</head>
+<style>
+	h1{
+		font-family: 'Luckiest Guy', cursive;
+	}
+	
+	p{
+		font-family: 'Roboto', sans-serif;
+	}
+
+    div{
+        width: 15%;
+        height: 25px;
+        margin: 10px auto;
+        background: linear-gradient(53deg, #f0ccd6, #a8b9e6);
+        border-radius: 25px;
+    }
+
+    div:hover{
+        transform: scale(1.5);
+        background: linear-gradient(106deg, #a8e6c8, #dcdf90);
+        opacity: 0.5;
+        text-decoration: none;
+    	color: black;
+    }
+    
+    a{
+    	font-family: 'Roboto', sans-serif;
+    	text-decoration: none;
+    	color: black;
+    }
+</style>
+<body>
+
+<h1 class="text-center">MENÚ DE OPCIONES</h1>
+	<ul class="text-center">
+	
+			<div>
+				<strong><a th:href="@{/examenUnidad2/Clientes}"> CLIENTES </a></strong>
+			</div>
+			<div>
+				<strong><a th:href="@{/examenUnidad2/Computadoras}"> COMPUTADORAS </a></strong>
+			</div>
+			<div>
+				<strong><a th:href="@{/examenUnidad2/Proveedores}"> PROVEEDORES </a></strong>
+			</div>
+			<div>
+				<strong><a th:href="@{/examenUnidad2/Tickets}"> TICKETS </a></strong>
+			</div>
+			<div>
+				<strong><a th:href="@{/examenUnidad2/Venta}"> VENTAS </a></strong>
+			</div>
+			<p><strong>Alumna:</strong> Hernández Campos María Fernanda</p>
+			<p><strong>Materia:</strong> Desarrollo de Aplicaciones Web</p>
+			<p><strong>Profesor:</strong> José Luis Pérez Sánchez</p>
+			<p><strong>Instituto Tecnológico Gustavo A. Madero</strong></p>
+	</ul>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+<title>CLIENTES</title>
+</head>
+<style>
+h1{
+	font-family: 'Luckiest Guy', cursive;
+	color: white;
+	background: linear-gradient(53deg, #f0ccd6, #a8b9e6);
+}
+a:hover{
+    margin-right: 20px;
+    color: #e41b6f;
+    opacity: 0.7;
+}
+
+a{
+	text-decoration: none;
+    color: black;
+}
+</style>
+<body>
+<h1 class="text-center" th:text="${titulo}"></h1>
+
+<table class="table table-striped"  th:if="${not clientes.isEmpty()}">
+  <thead>
+    <tr>
+      <th  class="text-center" scope="col">ID CLIENTE</th>
+      <th  class="text-center" scope="col">NOMBRE</th>
+      <th  class="text-center" scope="col">APELLIDOS</th>
+      <th  class="text-center" scope="col">TELEFONO</th>
+      <th  class="text-center" scope="col">EMAIL</th>
+      <th  class="text-center" scope="col">DIRECCION</th>
+    </tr>
+  </thead>
+	<tbody>
+		<tr th:each="clientes: ${clientes}">
+			<td  class="text-center" th:text="${clientes.idCliente}"></td>
+			<td  class="text-center" th:text="${clientes.nombre}"></td>
+			<td  class="text-center" th:text="${clientes.apellidos}"></td>
+			<td  class="text-center" th:text="${clientes.telefono}"></td>
+			<td  class="text-center" th:text="${clientes.email}"></td>
+			<td  class="text-center" th:text="${clientes.direccion}"></td>
+		</tr>
+	</tbody>
+</table>
+<br>
+<strong><a th:href="@{/examenUnidad2/Index}"> MENÚ </a></strong>
+</body>
+</html>	

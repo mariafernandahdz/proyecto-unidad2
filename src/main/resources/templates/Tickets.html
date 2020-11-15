@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+<title>TICKETS</title>
+</head>
+<style>
+h1{
+	font-family: 'Luckiest Guy', cursive;
+	color: white;
+	background: linear-gradient(53deg, #f0ccd6, #a8b9e6);
+}
+a:hover{
+    margin-right: 20px;
+    color: #e41b6f;
+    opacity: 0.7;
+}
+
+a{
+	text-decoration: none;
+    color: black;
+}
+</style>
+<body>
+<h1 class="text-center" th:text="${titulo}"></h1>
+
+<table class="table table-striped"  th:if="${not tickets.isEmpty()}">
+  <thead>
+    <tr>
+      <th  class="text-center" scope="col">ID TICKET</th>
+      <th  class="text-center" scope="col">ID VENTA</th>
+      <th  class="text-center" scope="col">NÚMERO DE SERIE</th>
+      <th  class="text-center" scope="col">CANTIDAD</th>
+      <th  class="text-center" scope="col">PRECIO</th>
+    </tr>
+  </thead>
+	<tbody>
+		<tr th:each="tickets: ${tickets}">
+			<td  class="text-center" th:text="${tickets.idTicket}"></td>
+			<td  class="text-center" th:text="${tickets.idVenta}"></td>
+			<td  class="text-center" th:text="${tickets.nSerie}"></td>
+			<td  class="text-center" th:text="${tickets.cantidad}"></td>
+			<td  class="text-center" th:text="${tickets.precio}"></td>
+		</tr>
+	</tbody>
+</table>
+<br>
+<strong><a th:href="@{/examenUnidad2/Index}"> MENÚ </a></strong>
+</body>
+</html>	
